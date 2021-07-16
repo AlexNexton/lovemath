@@ -176,6 +176,18 @@ body {
     background-color: #0d1013;
 }
 
+.btn--r {
+    margin-top: 25px;
+    background-color: #1ec540;
+    border: 1px transparent;
+    border-radius: 20px;
+}
+
+.btn--r:active,
+.btn--r:hover {
+    background-color: #d61010;
+}
+
 /* --------- Media queries */
 
 @media (max-width: 414px) {
