@@ -18,12 +18,20 @@ document.addEventListener("DOMContentLoaded", function(){
         })
     }
 
+    document.getElementById("answer-box").addEventListener("keydown", function(event){
+        if (event.key === "Enter") {
+            checkAnswer();
+        }
+    })
     runGame("addition");
 })
 
 
 function runGame(gameType){
     // Generate a number between 1 and 25
+
+    document.getElementById("answer-box").value = "";
+    document.getElementById("answer-box").focus();
 
 
     let num1 = Math.floor(Math.random()*25)+1;
@@ -79,7 +87,7 @@ function calculateCorrectAnswer() {
     } else if (operator === "x") {
         return [operand1 * operand2, "multiply"];
     } else if (operator === "/") {
-        return [operand1 / operand2, "division"];
+        return [parseInt(operand1 / operand2), "division"];
     }
     else {
         alert(`unimplemented operator ${operator}`);
@@ -131,12 +139,8 @@ function displayDivitionQuestion(operand1, operand2){
     document.getElementById("operand1").textContent = operand1 > operand2 ? operand1 : operand2;
     document.getElementById("operand2").textContent = operand1 > operand2 ? operand2 : operand1;
     document.getElementById("operator").textContent = "/";
-    
-    if (operand2 === 0) {
-        alert(`You can't divided by zero!!`)
-    }
-
-}
+     
+ }
 
 function refresh() {
 
